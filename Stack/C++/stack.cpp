@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Node structure
 struct Node {
     int val;
     Node* next;
@@ -11,23 +10,20 @@ struct Node {
 
 class Stack {
 private:
-    Node* Top; // Pointer to the top of the stack
-
+    Node* Top; 
 public:
-    // Constructor to initialize Top
+
     Stack() {
         Top = nullptr;
     }
 
-    // Function to push an element onto the stack
     void push(int x) {
-        Node* newNode = new Node; // Create a new node
+        Node* newNode = new Node; 
         newNode->val = x;
         newNode->next = Top;
-        Top = newNode; // Update Top to the new node
+        Top = newNode; 
     }
 
-    // Function to traverse and display the stack
     void traverse() {
         if (Top == nullptr) {
             cout << "Stack is empty!" << endl;
@@ -42,18 +38,17 @@ public:
         cout << "NULL" << endl;
     }
 
-    // Destructor to free memory
     ~Stack() {
         while (Top != nullptr) {
             Node* temp = Top;
             Top = Top->next;
-            delete temp; // Free the memory of the node
+            delete temp;
         }
     }
 };
 
 int main() {
-    Stack stack; // Create a stack object
+    Stack stack; 
     int choice, value;
 
     while (true) {
