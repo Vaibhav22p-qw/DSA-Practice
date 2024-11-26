@@ -23,7 +23,7 @@ Installation
 Clone this repository:
 bash
 
-git clone https://github.com/your-username/DSA-Practice.git
+git clone https://github.com/Vaibhav22p-qw/DSA-Practice.git
 Navigate to the project directory:
 bash
 
