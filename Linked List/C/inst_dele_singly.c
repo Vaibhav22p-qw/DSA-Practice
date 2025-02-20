@@ -28,6 +28,16 @@ node *end(node *head, int value){
     temp->next=p;
 }
 
+node* delf(node*head){
+    if(head==NULL)
+        return NULL;
+    node* p;
+    p=head;
+    head=p->next;
+    free(p);
+    return head;
+}
+
 void print(node* head){
     node* t;
         t=head;
@@ -42,7 +52,8 @@ void print(node* head){
  void menu(){
  printf("1. Insert at Begning\n");
  printf("2. Insert at End\n");
- printf("3. Exit\n");
+ printf("3. Delete First\n");
+ printf("4. Exit\n");
 } 
 
 int main(){
@@ -65,9 +76,13 @@ int main(){
                  scanf("%d",&n);
                 end(head, n);
                 print(head);
-                break;  
+                break; 
+             case 3:
+                head=delf(head);
+                print(head);
+                break;     
         }
-    } while (ch !=3);
+    } while (ch !=4);
 printf("\n|Final List|\n");
     
 print(head);
